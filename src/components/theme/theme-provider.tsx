@@ -10,8 +10,9 @@ function ThemeProvider(props: PropsWithChildren<{}>) {
       colorSchemes: {
         light: {
           palette: {
+            background: { default: "#000000", paper: "rgba(33, 33, 33, 0.85)" },
             primary: { main: "#D3131D" },
-            secondary: { main: "#000000" },
+            secondary: { main: "#FFFFFF" },
           },
         },
         dark: {
