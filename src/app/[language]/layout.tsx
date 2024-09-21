@@ -48,7 +48,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang={language} dir={dir(language)}>
-      <body>
+      <body
+        style={{
+          backgroundImage: 'url("/images/Watch-Wait-Skip-Full-Logo.png")',
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "center",
+        }}
+      >
         <InitializeColorSchemeScript />
         <QueryClientProvider client={queryClient}>
           <ReactQueryDevtools initialIsOpen={false} />
