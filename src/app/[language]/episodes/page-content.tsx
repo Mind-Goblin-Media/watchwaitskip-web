@@ -4,9 +4,9 @@ import Card from "@mui/material/Card";
 import { styled } from "@mui/material/styles";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
-import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import CardMedia from "@mui/material/CardMedia";
+import Container from "@mui/material/Container";
 
 // create an episode type with nullable values
 type Episode = {
@@ -110,7 +110,10 @@ export default function Episodes() {
 
   // iterate through the episodes and display episodes in MUI list
   return (
-    <Box sx={{ display: "flex", flexDirection: "column", gap: 4 }}>
+    <Container
+      maxWidth="md"
+      sx={{ display: "flex", flexDirection: "column", gap: 4 }}
+    >
       <div>
         <Typography variant="h1" gutterBottom>
           Podcast Episodes
@@ -120,7 +123,7 @@ export default function Episodes() {
 
       <Grid container spacing={2} columns={12}>
         {episodes.map((episode, index) => (
-          <Grid item key={index} xs={12} md={4}>
+          <Grid item key={index} xs={12} md={6}>
             <StyledCard
               variant="outlined"
               onFocus={() => handleFocus(0)}
@@ -162,6 +165,6 @@ export default function Episodes() {
           </Grid>
         ))}
       </Grid>
-    </Box>
+    </Container>
   );
 }

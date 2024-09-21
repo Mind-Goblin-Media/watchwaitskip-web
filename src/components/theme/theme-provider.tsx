@@ -16,7 +16,7 @@ function ThemeProvider(props: PropsWithChildren<{}>) {
         },
         dark: {
           palette: {
-            background: { default: "#000000", paper: "rgba(33, 33, 33, 0.49)" },
+            background: { default: "#000000", paper: "rgba(33, 33, 33, 0.85)" },
             primary: { main: "#D3131D" },
             secondary: { main: "#FFFFFF" },
           },
