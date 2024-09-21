@@ -21,7 +21,6 @@ import ReactQueryDevtools from "@/services/react-query/react-query-devtools";
 import GoogleAuthProvider from "@/services/social-auth/google/google-auth-provider";
 import FacebookAuthProvider from "@/services/social-auth/facebook/facebook-auth-provider";
 import ConfirmDialogProvider from "@/components/confirm-dialog/confirm-dialog-provider";
-import InitializeColorSchemeScript from "@/components/theme/init-color-scheme-script";
 
 type Props = {
   params: { language: string };
@@ -57,7 +56,6 @@ export default function RootLayout({
           minHeight: "100vh",
         }}
       >
-        <InitializeColorSchemeScript />
         <QueryClientProvider client={queryClient}>
           <ReactQueryDevtools initialIsOpen={false} />
           <ThemeProvider>
