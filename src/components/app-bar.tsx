@@ -19,7 +19,6 @@ import { useTranslation } from "@/services/i18n/client";
 import Link from "@/components/link";
 import { RoleEnum } from "@/services/api/types/role";
 import Divider from "@mui/material/Divider";
-import ThemeSwitchButton from "@/components/switch-theme-button";
 import { IS_SIGN_UP_ENABLED } from "@/services/auth/config";
 
 function ResponsiveAppBar() {
@@ -48,7 +47,7 @@ function ResponsiveAppBar() {
   };
 
   return (
-    <AppBar position="static">
+    <AppBar color="primary" enableColorOnDark position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography
@@ -61,13 +60,19 @@ function ResponsiveAppBar() {
               display: { xs: "none", md: "flex" },
               fontFamily: "monospace",
               fontWeight: 700,
-              letterSpacing: ".3rem",
               color: "inherit",
+              letterSpacing: ".3rem",
               textDecoration: "none",
             }}
           >
             {t("common:app-name")}
           </Typography>
+          {/* <Image
+            src="/Watch-Wait-Skip-Full-Logo.png"
+            alt="Watch Wait Skip Logo"
+            width={200}
+            height={100}
+          /> */}
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <IconButton
@@ -101,6 +106,33 @@ function ResponsiveAppBar() {
               <MenuItem onClick={handleCloseNavMenu} component={Link} href="/">
                 <Typography textAlign="center">
                   {t("common:navigation.home")}
+                </Typography>
+              </MenuItem>
+              <MenuItem
+                onClick={handleCloseNavMenu}
+                component={Link}
+                href="/episodes"
+              >
+                <Typography textAlign="center">
+                  {t("common:navigation.episodes")}
+                </Typography>
+              </MenuItem>
+              <MenuItem
+                onClick={handleCloseNavMenu}
+                component={Link}
+                href="/blog"
+              >
+                <Typography textAlign="center">
+                  {t("common:navigation.blog")}
+                </Typography>
+              </MenuItem>
+              <MenuItem
+                onClick={handleCloseNavMenu}
+                component={Link}
+                href="/merch"
+              >
+                <Typography textAlign="center">
+                  {t("common:navigation.merch")}
                 </Typography>
               </MenuItem>
 
@@ -173,6 +205,30 @@ function ResponsiveAppBar() {
             >
               {t("common:navigation.home")}
             </Button>
+            <Button
+              onClick={handleCloseNavMenu}
+              sx={{ my: 2, color: "white", display: "block" }}
+              component={Link}
+              href="/episodes"
+            >
+              {t("common:navigation.episodes")}
+            </Button>
+            <Button
+              onClick={handleCloseNavMenu}
+              sx={{ my: 2, color: "white", display: "block" }}
+              component={Link}
+              href="/blog"
+            >
+              {t("common:navigation.blog")}
+            </Button>
+            <Button
+              onClick={handleCloseNavMenu}
+              sx={{ my: 2, color: "white", display: "block" }}
+              component={Link}
+              href="/merch"
+            >
+              {t("common:navigation.merch")}
+            </Button>
 
             {!!user?.role &&
               [RoleEnum.ADMIN].includes(Number(user?.role?.id)) && (
@@ -188,15 +244,6 @@ function ResponsiveAppBar() {
                   {/* desktop-menu-items */}
                 </>
               )}
-          </Box>
-
-          <Box
-            sx={{
-              display: "flex",
-              mr: 1,
-            }}
-          >
-            <ThemeSwitchButton />
           </Box>
 
           {!isLoaded ? (

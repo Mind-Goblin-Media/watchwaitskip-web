@@ -1,5 +1,5 @@
 {
-  "app-name": "APP",
+  "app-name": "Watch Wait Skip",
   "loading": "Loading ...",
   "navigation": {
     "home": "Home",
@@ -7,7 +7,10 @@
     "signUp": "Sign Up",
     "profile": "Profile",
     "users": "Users",
-    "logout": "Logout"
+    "logout": "Logout",
+    "episodes": "Episodes",
+    "blog": "Blog",
+    "merch": "Merch"
   },
   "formInputs": {
     "avatarInput": {
