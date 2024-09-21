@@ -5,23 +5,27 @@ import { Experimental_CssVarsProvider as CssVarsProvider } from "@mui/material/s
 import { useMemo, PropsWithChildren } from "react";
 
 function ThemeProvider(props: PropsWithChildren<{}>) {
-  const themeOptions = {
-    colorSchemes: {
-      light: {
-        palette: {
-          primary: { main: "#D3131D" },
-          secondary: { main: "#000000" },
+  const theme = useMemo(() => {
+    const themeOptions = {
+      colorSchemes: {
+        light: {
+          palette: {
+            primary: { main: "#D3131D" },
+            secondary: { main: "#000000" },
+          },
+        },
+        dark: {
+          palette: {
+            background: { default: "#000000", paper: "rgba(33, 33, 33, 0.49)" },
+            primary: { main: "#D3131D" },
+            secondary: { main: "#FFFFFF" },
+          },
         },
       },
-      dark: {
-        palette: {
-          primary: { main: "#D3131D" },
-          secondary: { main: "#FFFFFF" },
-        },
-      },
-    },
-  };
-  const theme = useMemo(() => extendTheme(themeOptions), []);
+      colorSchemeSelector: "dark",
+    };
+    return extendTheme(themeOptions);
+  }, []);
 
   return (
     <CssVarsProvider theme={theme} defaultMode="system">
